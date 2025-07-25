@@ -1,0 +1,197 @@
+ /* --- CSS for Dynamic Cards and Filter --- */
+  .exam-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  .exam-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none; /* For link behavior */
+    color: inherit; /* For link behavior */
+    position: relative; /* For premium tag */
+  }
+
+  .exam-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  }
+
+  .exam-card.coming-soon {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+
+  .exam-card-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    background-color: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    color: #666;
+  }
+
+  .exam-card-content {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .exam-card-title {
+    font-size: 1.8em;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 10px;
+    line-height: 1.3;
+  }
+
+  .exam-card-detail {
+    font-size: 0.95em;
+    color: #555;
+    margin-bottom: 8px;
+  }
+
+  .exam-card-detail strong {
+    color: #333;
+  }
+
+  .exam-card-actions {
+    margin-top: auto; /* Pushes button to the bottom */
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+    text-align: center;
+  }
+
+  .exam-card-button {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    border: none;
+  }
+
+  .exam-card-button:hover {
+    background-color: #0056b3;
+  }
+
+  .exam-card-button.coming-soon-btn {
+    background-color: #6c757d;
+    cursor: not-allowed;
+  }
+
+  .premium-tag {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: #ffc107;
+    color: #333;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8em;
+    font-weight: 600;
+    z-index: 10;
+  }
+
+  /* --- MODERN FILTER STYLES --- */
+  .filter-container {
+    padding: 25px 20px; /* Increased padding */
+    background: linear-gradient(135deg, #f2f6fc 0%, #e8edf3 100%); /* Subtle gradient */
+    border-radius: 15px; /* More rounded corners */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08); /* Softer, more spread shadow */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Increased gap */
+    justify-content: center;
+    align-items: flex-end; /* Align items to the bottom */
+    margin-bottom: 30px; /* More space below filter */
+    border: 1px solid #dcdfe4; /* Light border */
+  }
+
+  .filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /* Slightly more space between label and input */
+  }
+
+  .filter-group label {
+    font-weight: 600;
+    color: #444; /* Slightly darker text for better contrast */
+    font-size: 0.95em; /* Slightly larger font */
+  }
+
+  .filter-group select,
+  .filter-group input[type="text"] {
+    padding: 10px 15px; /* Increased padding */
+    border-radius: 8px; /* More rounded input fields */
+    border: 1px solid #cdd2d8; /* Softer border color */
+    font-size: 1em; /* Standard font size */
+    width: 200px; /* Slightly wider input */
+    background-color: #fff;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05); /* Subtle inner shadow */
+  }
+
+  .filter-group select:focus,
+  .filter-group input[type="text"]:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2); /* Softer focus ring */
+  }
+
+  .filter-group button {
+    padding: 12px 25px; /* Larger, more prominent buttons */
+    background-color: #28a745; /* Green for apply/clear */
+    color: #fff;
+    border: none;
+    border-radius: 8px; /* Rounded buttons */
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Button shadow */
+  }
+
+  .filter-group button:hover {
+    background-color: #218838;
+    transform: translateY(-2px); /* Slight lift on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .filter-group button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  @media (max-width: 768px) {
+    .filter-container {
+      flex-direction: column;
+      align-items: stretch;
+      padding: 20px;
+    }
+    .filter-group select,
+    .filter-group input[type="text"] {
+      width: 100%;
+    }
+    .filter-group button {
+      width: 100%;
+    }
+  }
