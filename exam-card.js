@@ -1,14 +1,3 @@
- const DATA = [
-    {
-      name: "TNPSC GENERAL ENGLISH",
-      year: 2024,
-      standard: "10th Grade",
-      redirectLink: " ",
-      premium: false,
-      image: "https://raw.githubusercontent.com/elibnotes/assets/main/tnpsc-image.png"
-    },
- 
-  ];
 
   const examCardsContainer = document.getElementById('examCardsContainer');
   const filterNameInput = document.getElementById('filterName');
